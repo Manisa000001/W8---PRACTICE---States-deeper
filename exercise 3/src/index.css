@@ -69,9 +69,12 @@ header h1 {
   color: white;
   text-align: center;
   cursor: pointer;
+  border: none;
 }
-.order-button .disable {
+.order-button.disable {
   background-color: var(--grey-color);
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .order-button:hover {
@@ -110,3 +113,8 @@ header h1 {
 .checkout-button:hover {
   background: var(--main-color-light);
 }
+.checkout-button:disabled {
+  background: var(--grey-color);
+  cursor: not-allowed;
+}
+

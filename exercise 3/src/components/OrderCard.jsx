@@ -1,17 +1,30 @@
 import React from "react";
 
-export default function OrderCard() {
+export default function OrderCard({ product, price, quantity, onIncrease, onDecrease }) {
   return (
     <div className="order">
       <div>
-        <h4>TODO NAME</h4>
-        <small>TODO PRICE</small>
+        <h4>{product}</h4>
+        <small>${price}</small>
       </div>
 
       <div className="order-quantity">
-        <div className="order-button">-</div>
-        <h4>TODO PRICE</h4>
-        <div className="order-button">+</div>
+       <button
+  className={`order-button ${quantity === 0 ? "disable" : ""}`}
+  onClick={onDecrease}
+  disabled={quantity === 0}
+>
+  -
+</button>
+
+<h4>{quantity}</h4>
+
+<button
+  className="order-button"
+  onClick={onIncrease}
+>
+  +
+</button>
       </div>
     </div>
   );
